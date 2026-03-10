@@ -1,33 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Tabuada</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOGO</title>
 </head>
 <body>
+    <h2>adiinhe o numero de (1 a 10)</h2>
+    <impute type="number" id="palpite">
+    <button onclick="verificar()">Tentar</button>
 
-<h2>Tabuada</h2>
+    <p id="mensagem"></p>
 
-<input type="number" id="numero" placeholder="Digite um número">
-<button onclick="gerar()">Gerar</button>
+    <script>
 
-<ul id="lista"></ul>
+        let numeroSecreto = Math.Floor(Math.random()*10) +1;
+        let tentativa = 0;
+function verificar(){
 
-<script>
-function gerar(){
+    let palpite = Number(document.getElementById("palpite").value);
+    tentativa ++;
 
-    let num = Number(document.getElementById("numero").value);
-    let lista = document.getElementById("lista");
+    if(palpite === numeroSecreto){
+        document.getElementById("mensagem").innerText =
+        "Acertou em "+ temtativas + "tentativas";
 
-lista.innerHTML = "";
-
-for (let i = 1; i <= 10; i++) {
-    let item = document.createElement("li");
-    item.innerText = num + " x " + i + " = " + (num * i);
-    lista.appendChild(item);
+    }else{
+        document.getElementById("mensagem"). inerText =
+        "Errou! Tente novamente. ";
+        
+    }
 }
-}
-</script>
+
+
+
+
+    </script>
 
 </body>
 </html>
