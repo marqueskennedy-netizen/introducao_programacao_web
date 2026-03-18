@@ -3,39 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JOGO</title>
+    <title>Document</title>
 </head>
 <body>
-    <h2>adiinhe o numero de (1 a 10)</h2>
-    <impute type="number" id="palpite">
-    <button onclick="verificar()">Tentar</button>
+    <h2>Cadastre o nome</h2>
+    <imput type="text" id="nome" placeholder="Digite um nome">
+    <button onclick="adcionar()">Adicionar</button>
+    <button onclick="motrar()">Motrar Lista</button>
 
-    <p id="mensagem"></p>
-
+    <p id="resultado"></p>
+    
     <script>
-
-        let numeroSecreto = Math.Floor(Math.random()*10) +1;
-        let tentativa = 0;
-function verificar(){
-
-    let palpite = Number(document.getElementById("palpite").value);
-    tentativa ++;
-
-    if(palpite === numeroSecreto){
-        document.getElementById("mensagem").innerText =
-        "Acertou em "+ temtativas + "tentativas";
-
-    }else{
-        document.getElementById("mensagem"). inerText =
-        "Errou! Tente novamente. ";
-        
-    }
-}
+        let nomes =[];
+        function aicionar(){
+            let nome = document.getElementById("nome").value;
+            if(nome !=""){
+                nomes.push(nome);
+                document.getElementById("nome").value= "";
 
 
 
+            }
+        }
+        function mostrar(){
+            let texto = "Nomes Cadastrados: <br>";
+            for(let i=0; i<nome.lenght; i++){
+                texto += nomes[i] + "<br>";  
 
-    </script>
 
+        }
+        document.getElementById("resultado").innerHTML = texto;
+        }
+    
 </body>
 </html>
